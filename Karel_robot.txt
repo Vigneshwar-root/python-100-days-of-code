@@ -1,0 +1,115 @@
+https://reeborg.ca/reeborg.html
+
+
+
+Hurdle 2
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+def jump():
+    move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+    
+while not at_goal():
+    jump()
+    
+sound(True)
+done()
+
+
+Hurdle 3
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+def jump():
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+
+
+while not at_goal():
+    if front_is_clear():
+        move()
+    elif wall_in_front():
+        jump()
+
+
+print(at_goal())
+sound(True)
+done()
+
+Hurdle 4
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+def jump():
+    turn_left()
+    while wall_on_right():
+        move()
+    
+    turn_right()
+    move()
+    turn_right()
+    
+    while front_is_clear():
+        move()
+        
+    turn_left()
+
+
+while not at_goal():
+    if front_is_clear():
+        move()
+    elif wall_in_front():
+        jump()
+
+
+print(at_goal())
+sound(True)
+done()
+
+********************************************************************************
+
+Maze 
+
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+while front_is_clear():
+    move()
+turn_left()
+        
+        
+while not at_goal():
+    if right_is_clear():
+           turn_right()
+           move()
+    
+    elif front_is_clear():
+        move()
+        
+    else:
+        turn_left()
+
+
+
+
+
+

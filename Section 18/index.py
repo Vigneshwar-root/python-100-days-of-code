@@ -3,7 +3,19 @@ import random
 
 tim = t.Turtle()
 
-colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+#Here we are making changes in actual turtle module not turtle object
+t.colormode(255)
+
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    random_color = (r,g,b)
+    return random_color
+
+
+#colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+#Python List
 directions = [0, 90, 180, 270]
 
 ## Drawing different shapes
@@ -16,7 +28,23 @@ directions = [0, 90, 180, 270]
 # for shape_side_n in range(3,11):
 #     draw_shape(shape_side_n)
 
-for _ in range(200):
-    tim.forward(30)
-    tim.setheading(random.choice(directions))
+# tim.pensize(15)
+tim.speed(10)
+#tim.speed("fastest")
 
+# for _ in range(200):
+#     #tim.color(random.choice(colors))
+#     tim.color(random_color())
+#     tim.forward(30)
+#     tim.setheading(random.choice(directions))
+
+# We cannot change the value of tuple as compared to Python lists
+    # we can change a tuple to list like this list(my_tuple) 
+
+#circle of radius 100
+tim.circle(100)
+tim.color(random_color())
+
+
+screen = t.Screen()
+screen.exitonclick()
